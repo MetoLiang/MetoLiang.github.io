@@ -12,16 +12,16 @@
     
     <meta name="keywords" content="Anaconda,Python" />
     
-    <meta name="description" content="一、下载Anaconda进入Anaconda官网，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。        找到下载好的安装包，双击进行安装。    二、安装Anaconda很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面">
+    <meta name="description" content="一、下载Anaconda进入Anaconda官网，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。      找到下载好的安装包，双击进行安装。  二、安装Anaconda很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面，可以看">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows系统下Anaconda安装指南">
 <meta property="og:url" content="http://metoliang.github.io/2022/03/14/anaconda/index.html">
 <meta property="og:site_name" content="MetoLiang">
-<meta property="og:description" content="一、下载Anaconda进入Anaconda官网，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。        找到下载好的安装包，双击进行安装。    二、安装Anaconda很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面">
+<meta property="og:description" content="一、下载Anaconda进入Anaconda官网，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。      找到下载好的安装包，双击进行安装。  二、安装Anaconda很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面，可以看">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://metoliang.github.io/2022/03/14/anaconda/1.png">
 <meta property="article:published_time" content="2022-03-14T08:24:17.000Z">
-<meta property="article:modified_time" content="2022-03-14T10:29:42.901Z">
+<meta property="article:modified_time" content="2022-03-14T14:08:53.188Z">
 <meta property="article:author" content="Liang Jin">
 <meta property="article:tag" content="Anaconda">
 <meta property="article:tag" content="Python">
@@ -187,7 +187,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/03/14/anaconda/" class="article-date">
-     <time datetime="2022-03-14T10:29:42.901Z" itemprop="dateModified">2022-03-14</time>
+     <time datetime="2022-03-14T14:08:53.188Z" itemprop="dateModified">2022-03-14</time>
   </a>
 </div>
 
@@ -214,54 +214,54 @@
 
             
 
-            <h1 id="一、下载Anaconda"><a href="#一、下载Anaconda" class="headerlink" title="一、下载Anaconda"></a>一、下载Anaconda</h1><p>进入<a target="_blank" rel="noopener" href="https://www.anaconda.com/">Anaconda官网</a>，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。  </p>
+            <h1 id="一、下载Anaconda"><a href="#一、下载Anaconda" class="headerlink" title="一、下载Anaconda"></a>一、下载Anaconda</h1><p>进入<a target="_blank" rel="noopener" href="https://www.anaconda.com/">Anaconda官网</a>，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。</p>
 <center>
 <img src="/2022/03/14/anaconda/1.png" widith="50%">
 </center>  
-找到下载好的安装包，双击进行安装。  
+找到下载好的安装包，双击进行安装。
 
-<h1 id="二、安装Anaconda"><a href="#二、安装Anaconda" class="headerlink" title="二、安装Anaconda"></a>二、安装Anaconda</h1><p>很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面，可以看到有以下几个图标。  </p>
+<h1 id="二、安装Anaconda"><a href="#二、安装Anaconda" class="headerlink" title="二、安装Anaconda"></a>二、安装Anaconda</h1><p>很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面，可以看到有以下几个图标。</p>
 <center>
 <img src="/2022/03/14/anaconda/2.png" widith="50%">
 </center>    
-打开Anaconda prompt，输入： `conda list` ，往下拉可以看到已经装了哪些库。  
+打开Anaconda prompt，输入：`conda list`，往下拉可以看到已经装了哪些库。  
 <center>
 <img src="/2022/03/14/anaconda/3.png" widith="50%">
-</center>  
-我们优先需要的是下面这几个，看看这几个库，哪些库已经自动安装好了，哪些还没有，没有的需要手动安装：  
-**xarray** ：读取nc数据用的。建议用这个，这个库比netCDF4库(读取nc数据)方便。这个库不仅读取nc数据，还能继续计算气候态、距平等等  
-**numpy** ：数组计算用的  
-**pandas**：也是计算用的  
-**scipy**：计算相关系数、回归等等统计学函数用的  
-**matplotlib**：画线图、点图等等  
-**cartopy**：画空间分布图、二维图  
-**GSW**:海水热力学方程2010 (TEOS-10)的Python实现  
+</center>
+我们优先需要的是下面这几个，看看这几个库，哪些库已经自动安装好了，哪些还没有，没有的需要手动安装：
+**xarray**：读取nc数据用的。建议用这个，这个库比netCDF4库(读取nc数据)方便。这个库不仅读取nc数据，还能继续计算气候态、距平等等
+**numpy**：数组计算用的
+**pandas**：也是计算用的
+**scipy**：计算相关系数、回归等等统计学函数用的
+**matplotlib**：画线图、点图等等
+**cartopy**：画空间分布图、二维图
+**GSW**:海水热力学方程2010 (TEOS-10)的Python实现
 
 <h1 id="三、安装需要的库"><a href="#三、安装需要的库" class="headerlink" title="三、安装需要的库"></a>三、安装需要的库</h1><p><strong>1）以xarray为例：</strong><br><a target="_blank" rel="noopener" href="http://xarray.pydata.org/en/stable/installing.html">array官方网站</a>  </p>
 <center>
 <img src="/2022/03/14/anaconda/4.png" widith="50%">
-</center>  
-将上图官网中，这句代码复制到Anaconda prompt里，然后回车。  
-`conda install -c conda-forge xarray dask netCDF4 bottleneck`  
+</center>
+将上图官网中，这句代码复制到Anaconda prompt里，然后回车。
+`conda install -c conda-forge xarray dask netCDF4 bottleneck`
 按照提示操作，比如当弹出y/n（即：yes/no），输入y，即可继续自动安装xarray
-有时候网络不好会安装失败，过一个时间再试。  
+有时候网络不好会安装失败，过一个时间再试。
 **2）对于研究海洋的人一般会用到GSW库：**
-其库的文档链接，[点这](https://teos-10.github.io/GSW-Python/intro.html)。安装为`conda install -c conda-forge gsw`  
+其库的文档链接，[点这](https://teos-10.github.io/GSW-Python/intro.html)。安装为`conda install -c conda-forge gsw`
 
-<p>其他库的安装：先按照步骤“三、查看已经自动装了哪些库”，找找有没有xarray 、numpy 、pandas、scipy、matplotlib、cartopy这几个库，已经有了的不需要重复装，没有的需要在Anaconda prompt输入指令进行安装。一般直接<code>conda install xxx</code>就可以，xxx为你需要的库。如果提示找不到这个库<br>可以试试<code>conda install -c conda-forge xxx</code>  </p>
-<h1 id="四、进入编译器写代码"><a href="#四、进入编译器写代码" class="headerlink" title="四、进入编译器写代码"></a>四、进入编译器写代码</h1><p>单击Anaconda Prompt<br>选择你所想要工作的硬盘，如我要在D盘工作，在命令窗口键入如下命令  </p>
+<p>其他库的安装：先按照步骤“三、查看已经自动装了哪些库”，找找有没有xarray 、numpy 、pandas、scipy、matplotlib、cartopy这几个库，已经有了的不需要重复装，没有的需要在Anaconda prompt输入指令进行安装。一般直接<code>conda install xxx</code>就可以，xxx为你需要的库。如果提示找不到这个库<br>可以试试<code>conda install -c conda-forge xxx</code></p>
+<h1 id="四、进入编译器写代码"><a href="#四、进入编译器写代码" class="headerlink" title="四、进入编译器写代码"></a>四、进入编译器写代码</h1><p>单击Anaconda Prompt<br>选择你所想要工作的硬盘，如我要在D盘工作，在命令窗口键入如下命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d:     #选择D盘</span><br><span class="line">cd d:     #进入D盘</span><br><span class="line">jupyter notebook     #打开jupyter notebook</span><br></pre></td></tr></table></figure>
 <p>新手建议用jupyter notebook，因为可以一边写一边输出看看你写的结果。除此之外，我们打开Anaconda Navigator，可以看到里面已经有很多预装的编译器，比如jupyter lab（和jupyter notebook基本一样，但功能更强些），Spyder（也是Python编译器，界面美观），也可以安装例如PyCharm等，甚至还可以安装R语言和Orange（强大的绘图软件）。</p>
 <h1 id="五、可能遇到的问题及解决办法"><a href="#五、可能遇到的问题及解决办法" class="headerlink" title="五、可能遇到的问题及解决办法"></a>五、可能遇到的问题及解决办法</h1><p>步骤“安装anaconda”完了之后，点开始目录-运行-或win+r打开cmd-输入<code>conda info</code> 若显示出以下界面为成功：</p>
 <center>
 <img src="/2022/03/14/anaconda/6.png" widith="50%">
-</center>  
+</center>
 若显示“conda不是内部命令”，是因为没有设置环境变量。解决方法：
 右击“我的电脑”-高级系统设置-高级-环境变量-系统变量-path-编辑，把一些路径输进去，保存、重启。
-要加进去得路径有（每个人得Anaconda安装路径不同，按照各自的找出来）：
+要加进去的路径有（每个人的Anaconda安装路径不同，按照各自的找出来）：
 <center>
 <img src="/2022/03/14/anaconda/7.png" widith="50%">
-</center>  
+</center>
 
         </div>
         <footer class="article-footer">
@@ -269,7 +269,7 @@
 
 
 
-    <a data-url="http://metoliang.github.io/2022/03/14/anaconda/" data-id="cl0qrywnk0001dwtu9bg52dfd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://metoliang.github.io/2022/03/14/anaconda/" data-id="cl0qs7gau00012otu8bgm9p8e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -347,14 +347,14 @@
         "dateCreated": "2022-03-14",
         "dateModified": "2022-03-14",
         "url": "http://MetoLiang.github.io/2022/03/14/anaconda/",
-        "description": "一、下载Anaconda进入Anaconda官网，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。  
+        "description": "一、下载Anaconda进入Anaconda官网，点击Download。默认是64Bit的，如果需要32Bit的。点Products&gt;Individual Edition，页面拉到最下面即可。
 
 
   
-找到下载好的安装包，双击进行安装。  
+找到下载好的安装包，双击进行安装。
 
-二、安装Anaconda很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面",
-        "wordCount": 151
+二、安装Anaconda很简单，一路Next就行。选择安装路径的话按个人习惯，可以放在C盘，也可以放在其它盘。安装结束后，点击计算机“开始”界面，可以看",
+        "wordCount": 105
     }
 </script>
 
