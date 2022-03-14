@@ -287,15 +287,15 @@ customElements.define("delicate-toc", delicateTOC);
 <img src="/2022/03/14/anaconda/3.png" widith="50%">
 </center>  
 我们优先需要的是下面这几个，看看这几个库，哪些库已经自动安装好了，哪些还没有，没有的需要手动安装：  
-xarray ：读取nc数据用的。建议用这个，这个库比netCDF4库(读取nc数据)方便。这个库不仅读取nc数据，还能继续计算气候态、距平等等  
-numpy ：数组计算用的  
-pandas：也是计算用的  
-scipy：计算相关系数、回归等等统计学函数用的  
-matplotlib：画线图、点图等等  
-cartopy：画空间分布图、二维图  
-GSW:海水热力学方程2010 (TEOS-10)的Python实现  
+**xarray** ：读取nc数据用的。建议用这个，这个库比netCDF4库(读取nc数据)方便。这个库不仅读取nc数据，还能继续计算气候态、距平等等  
+**numpy** ：数组计算用的  
+**pandas**：也是计算用的  
+**scipy**：计算相关系数、回归等等统计学函数用的  
+**matplotlib**：画线图、点图等等  
+**cartopy**：画空间分布图、二维图  
+**GSW**:海水热力学方程2010 (TEOS-10)的Python实现  
 
-<h1 id="三、安装需要的库"><a href="#三、安装需要的库" class="headerlink" title="三、安装需要的库"></a>三、安装需要的库</h1><p>1）以xarray为例：<br><a target="_blank" rel="noopener" href="http://xarray.pydata.org/en/stable/installing.html">array官方网站</a>  </p>
+<h1 id="三、安装需要的库"><a href="#三、安装需要的库" class="headerlink" title="三、安装需要的库"></a>三、安装需要的库</h1><p><strong>1）以xarray为例：</strong><br><a target="_blank" rel="noopener" href="http://xarray.pydata.org/en/stable/installing.html">array官方网站</a>  </p>
 <center>
 <img src="/2022/03/14/anaconda/4.png" widith="50%">
 </center>  
@@ -303,7 +303,7 @@ GSW:海水热力学方程2010 (TEOS-10)的Python实现
 `conda install -c conda-forge xarray dask netCDF4 bottleneck`  
 按照提示操作，比如当弹出y/n（即：yes/no），输入y，即可继续自动安装xarray
 有时候网络不好会安装失败，过一个时间再试。  
-2）对于研究海洋的人一般会用到GSW库：
+**2）对于研究海洋的人一般会用到GSW库：**
 其库的文档链接，[点这](https://teos-10.github.io/GSW-Python/intro.html)。安装为`conda install -c conda-forge gsw`  
 
 <p>其他库的安装：先按照步骤“三、查看已经自动装了哪些库”，找找有没有xarray 、numpy 、pandas、scipy、matplotlib、cartopy这几个库，已经有了的不需要重复装，没有的需要在Anaconda prompt输入指令进行安装。一般直接<code>conda install xxx</code>就可以，xxx为你需要的库。如果提示找不到这个库<br>可以试试<code>conda install -c conda-forge xxx</code>  </p>
