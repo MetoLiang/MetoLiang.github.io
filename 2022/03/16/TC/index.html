@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>python画指定单个台风路径 | MetoLiang</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="python 台风" />
+    
+    <meta name="description" content="&amp;emsp;热带气旋（Tropical cyclone，简称TC）是最具破坏性的自然灾害之一。TC引起的大浪，对船只和海上作业造成威胁。强大的风力足以损坏甚至摧毁沿海的建筑、桥梁、车辆等。高达几米的风暴潮，引起潮水漫溢，海堤溃决，海水倒灌，侵蚀海岸，淹没城镇和农田，盐渍土地。TC携带的滂沱大雨，不但给登陆地带带来直接洪涝灾害，还引发次生灾害，如山体滑坡和泥石流等。在一些大中城市，TC造成的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python画指定单个台风路径">
+<meta property="og:url" content="http://metoliang.github.io/2022/03/16/TC/index.html">
+<meta property="og:site_name" content="MetoLiang">
+<meta property="og:description" content="&amp;emsp;热带气旋（Tropical cyclone，简称TC）是最具破坏性的自然灾害之一。TC引起的大浪，对船只和海上作业造成威胁。强大的风力足以损坏甚至摧毁沿海的建筑、桥梁、车辆等。高达几米的风暴潮，引起潮水漫溢，海堤溃决，海水倒灌，侵蚀海岸，淹没城镇和农田，盐渍土地。TC携带的滂沱大雨，不但给登陆地带带来直接洪涝灾害，还引发次生灾害，如山体滑坡和泥石流等。在一些大中城市，TC造成的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://metoliang.github.io/2022/03/16/TC/TC1.png">
+<meta property="article:published_time" content="2022-03-16T02:29:39.000Z">
+<meta property="article:modified_time" content="2022-03-16T04:01:52.140Z">
+<meta property="article:author" content="Liang Jin">
+<meta property="article:tag" content="python 台风">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://metoliang.github.io/2022/03/16/TC/TC1.png">
+    
+
+    
+        <link rel="alternate" href="/" title="MetoLiang" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/images/logo2-128.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                    
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-TC" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        python画指定单个台风路径
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/16/TC/" class="article-date">
+       <time datetime="2022-03-16T02:29:39.000Z" itemprop="datePublished">2022-03-16</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/16/TC/" class="article-date">
+     <time datetime="2022-03-16T04:01:52.140Z" itemprop="dateModified">2022-03-16</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/python-%E5%8F%B0%E9%A3%8E/" rel="tag">python 台风</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>&amp;emsp;热带气旋（Tropical cyclone，简称TC）是最具破坏性的自然灾害之一。TC引起的大浪，对船只和海上作业造成威胁。强大的风力足以损坏甚至摧毁沿海的建筑、桥梁、车辆等。高达几米的风暴潮，引起潮水漫溢，海堤溃决，海水倒灌，侵蚀海岸，淹没城镇和农田，盐渍土地。TC携带的滂沱大雨，不但给登陆地带带来直接洪涝灾害，还引发次生灾害，如山体滑坡和泥石流等。在一些大中城市，TC造成的暴雨和海水倒灌很可能造成城市内涝，引发交通瘫痪、地铁停运、破坏生态、疫病流行等，影响城市正常运行。这些都会造成大量人员伤亡和财产损失。<br>&amp;emsp;热带气旋也是影响我国的主要灾害性天气系统，造成的损失占全国所有灾害损失的一半。在大气和海洋研究中经常会画台风的路径，比如要研究一个超强台风的个例，那我们怎么用python实现画指定单个台风的路径呢？下面是我按个人理解编写的代码，如有错误的地方，欢迎指出。<br>&amp;emsp;我选用的台风路径数据来源于国际气候管理最佳路径档案（International Best Track Archive for Climate Stewardship，IBTrACS），是目前最完整的热带气旋数据集。它合并了多个机构最近和历史的热带气旋数据，创建了一个统一的、公开可用的、最佳路径的数据集，从而提高了机构间的比较。其下载地址，<a target="_blank" rel="noopener" href="https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/netcdf/">点这</a>。</p>
+<center>
+<img src="/2022/03/16/TC/TC1.png" widith="50%">
+</center>
+&emsp;可以看到它有分各个大洋的数据和总体的数据，这里我选的是ALL。下载后，打开数据，我们看到有多个机构的数据，如美国的、日本的、中国气象局的（CMA）还有中国香港等。我用的是CMA的数据。CMA记录的有纬度（cma_lat）、经度（cma_lon）、强度类别（cma_cat）、最大风速（cma_wind）、中心气压（cma_pres）。
+<center>
+<img src="/2022/03/16/TC/TC2.png" widith="50%">
+</center>
+&emsp;那么我们怎么找出我们想要的台风呢？这里要注意的是CMA的数据是有两个维度的，分别是storm和date_time。而storm是长这样的，是从0-13582的数，也就是一个台风对应这其中的一个值，那我们如果想找一个特定的台风用这个的话就非常不方便。注意到，数据中还有这么一个变量（name）,我们看看它长啥样。可以看到它是由气旋名字组成的数组，同样是13583个值，那我们就可以根据这个气旋名字来找出想要的台风。
+<center>
+<img src="/2022/03/16/TC/TC3.png" widith="50%">
+</center>
+<center>
+<img src="/2022/03/16/TC/TC4.png" widith="50%">
+</center>
+&emsp;例如对于台风山竹（国际编号：1822）,用下面代码找出所有索引，为啥是所有的索引呢，这是因为可能有些台风名字用过好几次，所以我们先全部找出来。
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">name = np.ndarray.tolist(np.array(ds.name)) #将DataArray转为ndarray再转化为list</span><br><span class="line">#下面找出所有符合的索引</span><br><span class="line">TC_name = b&#x27;MANGKHUT&#x27; #在这里输入你想要的台风名称，大写</span><br><span class="line">index = []</span><br><span class="line">current_pos = 0</span><br><span class="line">for _ in range(name.count(TC_name)):</span><br><span class="line">    new_list = name[current_pos:]</span><br><span class="line">    _index = new_list.index(TC_name)</span><br><span class="line">    index.append(current_pos + _index)</span><br><span class="line">    current_pos += new_list.index(TC_name)+1</span><br></pre></td></tr></table></figure>
+&emsp;可以看到索引值为12659和13200，接下来我们可以用时间来判断哪个是你想要的台风。山竹是18年的台风，所以13200是它的索引。
+<center>
+<img src="/2022/03/16/TC/TC5.png" widith="50%">
+</center>
+<center>
+<img src="/2022/03/16/TC/TC6.png" widith="50%">
+</center>
+&emsp;下面是完整代码
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">import xarray as xr</span><br><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import matplotlib.lines as mlines</span><br><span class="line">import cartopy.crs as ccrs</span><br><span class="line">import cartopy.feature as cfeature</span><br><span class="line">from cartopy.mpl.ticker import LongitudeFormatter,LatitudeFormatter</span><br><span class="line">import shapely.geometry as sgeom</span><br><span class="line">import warnings</span><br><span class="line">warnings.filterwarnings(&#x27;ignore&#x27;)</span><br><span class="line">plt.rcParams[&#x27;font.sans-serif&#x27;] = [u&#x27;SimHei&#x27;]</span><br><span class="line">plt.rcParams[&#x27;axes.unicode_minus&#x27;] = False</span><br><span class="line"></span><br><span class="line">path=r&#x27;D:\nc\IBTrACS.nc&#x27;</span><br><span class="line">ds=xr.open_dataset(path)</span><br><span class="line"></span><br><span class="line">name = np.ndarray.tolist(np.array(ds.name)) #将DataArray转为ndarray再转化为list</span><br><span class="line">#下面找出所有符合的索引</span><br><span class="line">TC_name = b&#x27;MANGKHUT&#x27; #在这里输入你想要的台风名称</span><br><span class="line">index = []</span><br><span class="line">current_pos = 0</span><br><span class="line">for _ in range(name.count(TC_name)):</span><br><span class="line">    new_list = name[current_pos:]</span><br><span class="line">    _index = new_list.index(TC_name)</span><br><span class="line">    index.append(current_pos + _index)</span><br><span class="line">    current_pos += new_list.index(TC_name)+1</span><br><span class="line"></span><br><span class="line">lat = ds.cma_lat[13200,:]</span><br><span class="line">lon = ds.cma_lon[13200,:]</span><br><span class="line">cat = ds.cma_cat[13200,:]</span><br><span class="line">time = np.array(ds.time[13200,:])</span><br><span class="line">#拼接原始数据，并存为dataframe</span><br><span class="line">lenth_ori = time.shape[0]</span><br><span class="line">df_time_ori = pd.DataFrame(time,index=None,columns =[&#x27;time&#x27;])</span><br><span class="line">df_lat_ori = pd.DataFrame(lat,index=None,columns =[&#x27;lat&#x27;])</span><br><span class="line">df_lon_ori = pd.DataFrame(lon,index=None,columns =[&#x27;lon&#x27;])</span><br><span class="line">df_cat_ori = pd.DataFrame(cat,index=None,columns =[&#x27;cat&#x27;])</span><br><span class="line">df_data_ori = pd.concat([df_time_ori,df_lat_ori,df_lon_ori,df_cat_ori],axis=1)</span><br><span class="line">#删除有nan的行，并更新index</span><br><span class="line">TC_data = df_data_ori.dropna(axis=0, how=&#x27;any&#x27;, thresh=None, subset=None, inplace=False).reset_index()</span><br><span class="line"></span><br><span class="line"># 按强度区分颜色</span><br><span class="line">def get_color(cat):</span><br><span class="line">    if cat in (0,1):</span><br><span class="line">        color=&#x27;#FFFF00&#x27;</span><br><span class="line">    elif cat in (1,2):</span><br><span class="line">        color=&#x27;#6495ED&#x27;</span><br><span class="line">    elif cat in (2,3):</span><br><span class="line">        color=&#x27;#3CB371&#x27;</span><br><span class="line">    elif cat in (3,4):</span><br><span class="line">        color=&#x27;#FFA500&#x27;</span><br><span class="line">    elif cat in (4,5):</span><br><span class="line">        color=&#x27;#FF00FF&#x27;</span><br><span class="line">    elif cat in (5,6):</span><br><span class="line">        color=&#x27;#DC143C&#x27;</span><br><span class="line">    return color</span><br><span class="line"></span><br><span class="line"># 通过cartopy获取底图</span><br><span class="line">fig = plt.figure(figsize=(10,10))</span><br><span class="line">ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())</span><br><span class="line"># 用经纬度对地图区域进行截取，这里只展示我国沿海区域</span><br><span class="line">ax.set_extent([85,170,0,50], crs=ccrs.PlateCarree())</span><br><span class="line"># 设置名称</span><br><span class="line">ax.set_title(&#x27;1522号台风彩虹&#x27;,fontsize=16)</span><br><span class="line"># 设置地图属性，比如加载河流、海洋</span><br><span class="line">ax.add_feature(cfeature.LAND)</span><br><span class="line">ax.add_feature(cfeature.OCEAN)</span><br><span class="line">ax.add_feature(cfeature.COASTLINE)</span><br><span class="line">ax.add_feature(cfeature.RIVERS)</span><br><span class="line">ax.add_feature(cfeature.COASTLINE)</span><br><span class="line">ax.add_feature(cfeature.LAKES, alpha=0.5)</span><br><span class="line"></span><br><span class="line">for i in range(len(TC_data)):</span><br><span class="line">    ax.scatter(list(TC_data[&#x27;lon&#x27;])[i], list(TC_data[&#x27;lat&#x27;])[i], marker=&#x27;o&#x27;, s=20, color=get_color(list(TC_data[&#x27;cat&#x27;])[i]))</span><br><span class="line"></span><br><span class="line">for i in range(len(TC_data)-1):</span><br><span class="line">    pointA = list(TC_data[&#x27;lon&#x27;])[i],list(TC_data[&#x27;lat&#x27;])[i]</span><br><span class="line">    pointB = list(TC_data[&#x27;lon&#x27;])[i+1],list(TC_data[&#x27;lat&#x27;])[i+1]</span><br><span class="line">    ax.add_geometries([sgeom.LineString([pointA, pointB])], color=get_color(list(TC_data[&#x27;cat&#x27;])[i+1]),crs=ccrs.PlateCarree())</span><br><span class="line"></span><br><span class="line">ax.set_xticks(np.arange(80,170,10), crs=ccrs.PlateCarree())</span><br><span class="line">ax.set_yticks(np.arange(10,50,10), crs=ccrs.PlateCarree())</span><br><span class="line">ax.xaxis.set_major_formatter(LongitudeFormatter())</span><br><span class="line">ax.xaxis.set_minor_locator(plt.MultipleLocator(5))</span><br><span class="line">ax.yaxis.set_major_formatter(LatitudeFormatter())</span><br><span class="line">ax.yaxis.set_minor_locator(plt.MultipleLocator(5))</span><br><span class="line"></span><br><span class="line">a = mlines.Line2D([],[],color=&#x27;#FFFF00&#x27;,marker=&#x27;o&#x27;,markersize=7, label=&#x27;TD&#x27;,ls=&#x27;&#x27;)</span><br><span class="line">b = mlines.Line2D([],[],color=&#x27;#6495ED&#x27;, marker=&#x27;o&#x27;,markersize=7, label=&#x27;TS&#x27;,ls=&#x27;&#x27;)</span><br><span class="line">c = mlines.Line2D([],[],color=&#x27;#3CB371&#x27;, marker=&#x27;o&#x27;,markersize=7, label=&#x27;STS&#x27;,ls=&#x27;&#x27;)</span><br><span class="line">d = mlines.Line2D([],[],color=&#x27;#FFA500&#x27;, marker=&#x27;o&#x27;,markersize=7, label=&#x27;TY&#x27;,ls=&#x27;&#x27;)</span><br><span class="line">e = mlines.Line2D([],[],color=&#x27;#FF00FF&#x27;, marker=&#x27;o&#x27;,markersize=7, label=&#x27;STY&#x27;,ls=&#x27;&#x27;)</span><br><span class="line">f = mlines.Line2D([],[],color=&#x27;#DC143C&#x27;, marker=&#x27;o&#x27;,markersize=7, label=&#x27;SSTY&#x27;,ls=&#x27;&#x27;)</span><br><span class="line">ax.legend(handles=[a,b,c,d,e,f], numpoints=1, handletextpad=0, loc=&#x27;upper left&#x27;, shadow=True)</span><br><span class="line"># 展示地图</span><br><span class="line">fig.tight_layout()</span><br><span class="line">plt.savefig(r&#x27;D:\picture\TC\1522_caihong.jpg&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+&emsp;效果图如下：
+<center>
+<img src="/2022/03/16/TC/TC7.jpg" widith="50%">
+</center>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://metoliang.github.io/2022/03/16/TC/" data-id="cl0t1hgxr0000p0tudbc6hpzh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Liang Jin"
+        },
+        "headline": "python画指定单个台风路径",
+        "image": "http://MetoLiang.github.io/2022/03/16/TC/TC1.png",
+        "keywords": "python 台风",
+        "genre": "",
+        "datePublished": "2022-03-16",
+        "dateCreated": "2022-03-16",
+        "dateModified": "2022-03-16",
+        "url": "http://MetoLiang.github.io/2022/03/16/TC/",
+        "description": "&amp;emsp;热带气旋（Tropical cyclone，简称TC）是最具破坏性的自然灾害之一。TC引起的大浪，对船只和海上作业造成威胁。强大的风力足以损坏甚至摧毁沿海的建筑、桥梁、车辆等。高达几米的风暴潮，引起潮水漫溢，海堤溃决，海水倒灌，侵蚀海岸，淹没城镇和农田，盐渍土地。TC携带的滂沱大雨，不但给登陆地带带来直接洪涝灾害，还引发次生灾害，如山体滑坡和泥石流等。在一些大中城市，TC造成的",
+        "wordCount": 558
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/MetoLiang/MetoLiang.github.io" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/03/14/anaconda/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Windows系统下Anaconda安装指南</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/16/TC/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2022/03/16/TC/TC1.png)" alt="python画指定单个台风路径" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/03/16/TC/" class="title">python画指定单个台风路径</a></p>
+                            <p class="item-date"><time datetime="2022-03-16T02:29:39.000Z" itemprop="datePublished">2022-03-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/14/anaconda/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2022/03/14/anaconda/1.png)" alt="Windows系统下Anaconda安装指南" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/03/14/anaconda/" class="title">Windows系统下Anaconda安装指南</a></p>
+                            <p class="item-date"><time datetime="2022-03-14T08:24:17.000Z" itemprop="datePublished">2022-03-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/12/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2022/03/12/hello-world/" class="title">我的第一篇博客</a></p>
+                            <p class="item-date"><time datetime="2022-03-12T13:29:11.933Z" itemprop="datePublished">2022-03-12</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anaconda/" rel="tag">Anaconda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-%E5%8F%B0%E9%A3%8E/" rel="tag">python 台风</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/python-%E5%8F%B0%E9%A3%8E/" style="font-size: 10px;">python 台风</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Liang Jin</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://metoliang.github.io/2022/03/16/TC/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
